@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="./parallel-workers-manager.js"></script>
+  </head>
+  <body>
+    <script type="module">
+      async function doAll() {
+        const { WorkerManager } = Threads;
+        const workerManager = new WorkerManager(
+          (value) => {
+            return value;
+          },
+          {
+            logger: console,
+            maxWorkers: 2,
+          },
+        );
+
+        const promises = [workerManager.post('abc'), workerManager.post('def')];
+        const results = await Promise.all(promises);
+        console.log(results);
+      }
+      doAll();
+    </script>
+  </body>
+</html>
