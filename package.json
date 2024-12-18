@@ -1,0 +1,50 @@
+{
+  "name": "parallel-workers-manager",
+  "version": "0.0.0",
+  "description": "Easily parallelize tasks using workers both in the browser and in Node.js",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "npm run prepack && cheminfo-build --entry src/index.js --root PWM",
+    "eslint": "eslint src",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepack": "rollup -c",
+    "prettier": "prettier --check src",
+    "prettier-write": "prettier --write src",
+    "test": "npm run test-only && npm run eslint && npm run prettier",
+    "test-only": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheminfo/parallel-workers-manager.git"
+  },
+  "keywords": [],
+  "author": "Luc Patiny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheminfo/parallel-workers-manager/issues"
+  },
+  "homepage": "https://github.com/cheminfo/parallel-workers-manager#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.26.3",
+    "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^2.1.8",
+    "cheminfo-build": "^1.2.0",
+    "delay": "^6.0.0",
+    "eslint": "^9.17.0",
+    "eslint-config-cheminfo": "^13.0.0",
+    "fifo-logger": "^1.0.0",
+    "prettier": "^3.4.2",
+    "rollup": "^4.28.1",
+    "uint8-base64": "^0.1.1",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "cheminfo-types": "^1.8.1",
+    "web-worker": "^1.3.0"
+  }
+}
