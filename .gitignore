@@ -85,6 +85,9 @@ out
 
 dist/*
 !dist/index.html
+!dist/small.html
+!dist/small.binary
+!dist/uint8-base64.js
 
 
 # Gatsby files

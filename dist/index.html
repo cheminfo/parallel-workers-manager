@@ -5,8 +5,8 @@
   <body>
     <script type="module">
       async function doAll() {
-        const { WorkerManager } = Threads;
-        const workerManager = new WorkerManager(
+        const { ParallelWorkersManager } = PWM;
+        const workerManager = new ParallelWorkersManager(
           (value) => {
             return value;
           },

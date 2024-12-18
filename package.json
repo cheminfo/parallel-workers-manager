@@ -9,7 +9,7 @@
     "src"
   ],
   "scripts": {
-    "build": "npm run prepack && cheminfo-build --entry src/index.js --root ParallelWorkersManager",
+    "build": "npm run prepack && cheminfo-build --entry src/index.js --root PWM",
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
     "prepack": "rollup -c",
